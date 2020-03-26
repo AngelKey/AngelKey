@@ -1,6 +1,6 @@
 #!groovy
 
-helpers = fileLoader.fromGit('helpers', 'https://github.com/keybase/jenkins-helpers.git', 'master', null, 'linux')
+helpers = fileLoader.fromGit('helpers', 'https://github.com/angelkey/Angelkey.jenkins-helpers.git', 'master', null, 'linux')
 
 helpers.rootLinuxNode(env, {
     helpers.slackOnError("client", env, currentBuild)
@@ -38,10 +38,10 @@ helpers.rootLinuxNode(env, {
 
     env.BASEDIR=pwd()
     env.GOPATH="${env.BASEDIR}/go"
-    def mysqlImage = docker.image("keybaseprivate/mysql")
-    def gregorImage = docker.image("keybaseprivate/kbgregor")
-    def kbwebImage = docker.image("keybaseprivate/kbweb")
-    def glibcImage = docker.image("keybaseprivate/glibc")
+    def mysqlImage = docker.image("angelkeyprivate/mysql")
+    def gregorImage = docker.image("angelkeyprivate/kbgregor")
+    def kbwebImage = docker.image("angelkeyprivate/kbweb")
+    def glibcImage = docker.image("angelkeyprivate/glibc")
     def clientImage = null
 
     def kbwebNodePrivateIP = httpRequest("http://169.254.169.254/latest/meta-data/local-ipv4").content
@@ -53,10 +53,10 @@ helpers.rootLinuxNode(env, {
     println "Cause: ${cause}"
     println "Pull Request ID: ${env.CHANGE_ID}"
 
-    ws("${env.GOPATH}/src/github.com/keybase/client") {
+    ws("${env.GOPATH}/src/github.com/angelkey/angelkey") {
 
         stage("Setup") {
-            sh "docker rmi keybaseprivate/mysql || echo 'No mysql image to remove'"
+            sh "docker rmi angelkeyprivate/mysql || echo 'No mysql image to remove'"
             docker.withRegistry("", "docker-hub-creds") {
                 parallel (
                     checkout: {
@@ -70,8 +70,8 @@ helpers.rootLinuxNode(env, {
                             sh 'echo -n $(git rev-parse HEAD) > go/revision'
                             sh "git add go/revision"
                             env.GIT_COMMITTER_NAME = 'Jenkins'
-                            env.GIT_COMMITTER_EMAIL = 'ci@keybase.io'
-                            sh 'git commit --author="Jenkins <ci@keybase.io>" -am "revision file added"'
+                            env.GIT_COMMITTER_EMAIL = 'ci@angelkey.io'
+                            sh 'git commit --author="Jenkins <ci@angelkey.io>" -am "revision file added"'
                             env.COMMIT_HASH = readFile('go/revision')
                         }
                     },
@@ -107,7 +107,7 @@ helpers.rootLinuxNode(env, {
                         if (hasGoChanges) {
                             // Build the client docker first so we can immediately kick off KBFS
                             dir('go') {
-                                sh "go install github.com/keybase/client/go/keybase"
+                                sh "go install github.com/angelkey/client/go/keybase"
                                 sh "cp ${env.GOPATH}/bin/keybase ./keybase/keybase"
                                 clientImage = docker.build("keybaseprivate/kbclient")
                                 sh "docker save keybaseprivate/kbclient | gzip > kbclient.tar.gz"
