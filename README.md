@@ -1,6 +1,6 @@
-## Keybase [![Build Status](https://travis-ci.org/keybase/client.svg?branch=master)](https://travis-ci.org/keybase/client) [![Build status](https://ci.appveyor.com/api/projects/status/90mxorxtj6vixnum/branch/master?svg=true)](https://ci.appveyor.com/project/keybase/client-x5qrt/branch/master)
+## AngelKey [![Build Status](https://travis-ci.org/angelkey/client.svg?branch=master)](https://travis-ci.org/angelkey/client) [![Build status](https://ci.appveyor.com/api/projects/status/90mxorxtj6vixnum/branch/master?svg=true)](https://ci.appveyor.com/project/angelkey/client-x5qrt/branch/master)
 
-Hi, and welcome to the Keybase client repo.  All our client apps (macOS,
+Hi, and welcome to the AngelKey client repo.  All our client apps (macOS,
 Windows, Linux, iOS, and Android) are being actively developed in this
 repository. Please, dig around.
 
@@ -10,14 +10,14 @@ We'd love you to read our source code.
 
 But - some of the things in this repo are explorations, and the app you build
 from source just *might not do what it says it's doing*. So, if you just want
-to install Keybase on your computer, you should **[monitor our releases](https://keybase.io/download)** for macOS, Linux, or Windows.
+to install AngelKey on your computer, you should **[monitor our releases](https://angelkey.github.io/download)** for macOS, Linux, or Windows.
 
-![Sharing](https://keybase.io/images/github/repo_share.png?)
+![Sharing](https://angelkey.github.io/images/github/repo_share.png?)
 
 
 ### Code Layout
 
-* **go**: Core crypto libraries; the Keybase service; the command line client. [Learn More](go/README.md)
+* **go**: Core crypto libraries; the AngelKey service; the command line client. [Learn More](go/README.md)
 * **shared/react-native**: Android and iOS apps developed with [React Native](https://facebook.github.io/react-native/).
 * **shared/desktop**: Desktop application for macOS, Linux, and Windows, made with the [Electron](https://github.com/atom/electron) framework, sharing React code with react-native.
 * **packaging**: Scripts for releasing packages across the various platforms.
@@ -28,15 +28,15 @@ to install Keybase on your computer, you should **[monitor our releases](https:/
 ### Problems?
 
 Report any issues with client software on this GitHub
-[issue tracker](https://github.com/keybase/client/issues).
+[issue tracker](https://github.com/angelkey/client/issues).
 Internally, we track our progress using Jira, but all PRs come through GitHub
 for your review!
 
-If you're having problems with the command line `keybase` client, take a
+If you're having problems with the command line `angelkey` client, take a
 look at [the troubleshooting doc](go/doc/troubleshooting.md).
 
 If you're having problems with our Website, try the
-[keybase-issues](https://github.com/keybase/keybase-issues) issue tracker.
+[keybase-issues](https://github.com/angelkey/angelkey-issues) issue tracker.
 
 We check and update both frequently.
 
