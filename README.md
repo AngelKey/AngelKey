@@ -21,9 +21,9 @@ to install AngelKey on your computer, you should **[monitor our releases](https:
 * **shared/react-native**: Android and iOS apps developed with [React Native](https://facebook.github.io/react-native/).
 * **shared/desktop**: Desktop application for macOS, Linux, and Windows, made with the [Electron](https://github.com/atom/electron) framework, sharing React code with react-native.
 * **packaging**: Scripts for releasing packages across the various platforms.
-* **protocol**: Defines the protocol for communication for clients to the Keybase services. Uses [Avro](http://avro.apache.org/docs/1.7.7/). [Learn More](protocol/README.md)
-* **media**: Icons, graphics, media for Keybase apps.
-* **osx**: The macOS Keybase.app, development parallel to an Electron-based application above. [Learn More](osx/README.md)
+* **protocol**: Defines the protocol for communication for clients to the AngelKey services. Uses [Avro](http://avro.apache.org/docs/1.7.7/). [Learn More](protocol/README.md)
+* **media**: Icons, graphics, media for AngelKey apps.
+* **osx**: The macOS AngelKey.app, development parallel to an Electron-based application above. [Learn More](osx/README.md)
 
 ### Problems?
 
@@ -36,7 +36,7 @@ If you're having problems with the command line `angelkey` client, take a
 look at [the troubleshooting doc](go/doc/troubleshooting.md).
 
 If you're having problems with our Website, try the
-[keybase-issues](https://github.com/angelkey/angelkey-issues) issue tracker.
+[Angelkey-issues](https://github.com/angelkey/angelkey-issues) issue tracker.
 
 We check and update both frequently.
 
@@ -64,7 +64,7 @@ Then proceed as normal.
 If you forked this repository on GitHub and made a PR, then it'll show up as
 having failed Jenkins CI. We do not build external PRs because it's a security
 risk to do so without a review first. If your PR is successfully reviewed by a
-member of the Keybase team, then we will merge your commits to a branch on our
+member of the AngelKey team, then we will merge your commits to a branch on our
 primary fork and build from there.
 
 
